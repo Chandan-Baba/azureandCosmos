@@ -1,0 +1,35 @@
+@model ContactViewModel
+@{
+  ViewData["Title"] = "Edit Contact";
+}
+<h4 class="display-4">Editing Contact - @Model.ContactName</h4>
+
+<div class="container">
+  <form method="POST" asp-controller="Contact" asp-action="Edit" asp-antiforgery="true">
+    <input type="hidden" class="form-control" asp-for="Id"/>
+    <div class="form-group">
+      <label asp-for="ContactName"></label>
+      <input class="form-control" asp-for="ContactName"/>
+      <span asp-validation-for="ContactName" class="text-danger"></span>
+    </div> 
+    <div class="form-group">
+      <label asp-for="Phone"></label>
+      <input class="form-control" asp-for="Phone"/>
+      <span asp-validation-for="Phone" class="text-danger"></span>
+    </div> 
+    <div class="form-group">
+      <label asp-for="ContactType"></label>
+      <input class="form-control" asp-for="ContactType"/>
+      <span asp-validation-for="ContactType" class="text-danger"></span>
+    </div> 
+    <div class="form-group">
+      <label asp-for="Email"></label>
+      <input class="form-control" asp-for="Email"/>
+      <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+     <div class="form-group text-center">
+      <input type="submit" value="Edit Contact" class="btn btn-outline-primary" />
+      <a asp-controller="Contact" asp-action="Index" class="btn btn-outline-info">Show Contacts</a>
+    </div>
+  </form>
+</div>

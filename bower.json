@@ -1,0 +1,7 @@
+{
+  "name": "contact2tablecosmosmvc",
+  "dependencies": {
+    "jQuery": "3.4.1",
+    "bootstrap": "4.4.1"
+  }
+}

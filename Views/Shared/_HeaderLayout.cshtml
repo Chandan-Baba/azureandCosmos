@@ -1,0 +1,22 @@
+<nav class="navbar fixed-top navbar-dark bg-dark navbar-expand-md">
+  <a class="navbar-brand" asp-controller="Contact" asp-action="Index">Contact Book</a>
+  <button class="navbar-toggler" type="button" data-target="#navigationContent"
+          data-toggle="collapse" aria-controls="navigationContent"
+          aria-expanded="false" aria-label="Toggle Navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="navbar-collapse collapse" id="navigationContent">
+    <ul class="navbar-nav mr-auto">
+      <li><a class="nav-link" asp-controller="Home" asp-action="Index">Home</a></li>
+      <li><a class="nav-link" asp-controller="Home" asp-action="Vault">Vault</a></li>
+      <li><a class="nav-link" href="/swagger/index.html">Swagger</a></li>
+    </ul>
+  </div>
+    <div class="navbar dropright">
+    @if (TempData["newcontact"] != null)
+    {
+      <span class="text-white">@TempData["newcontact"]</span>
+    }
+  </div>
+
+</nav>
