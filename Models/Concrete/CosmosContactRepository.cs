@@ -84,22 +84,30 @@ namespace Contacts2TableCosmosMVC.Models.Concrete
 
     public async Task<List<Contact>> FindContactByPhoneAsync(string phone)
     {
-      return null;
+      var sqlQuery = $"Select * from c where c.phone='{phone}'";
+      var contactsList = await GetContacts(sqlQuery);
+      return contactsList;
     }
 
     public async Task<List<Contact>> FindContactCPAsync(string contactName, string phone)
     {
-      return null;
+      var sqlQuery = $"Seect * from c where c.contactName='{contactName}'and c.phone='{phone}'";
+      var contactsList = await GetContacts(sqlQuery);
+      return contactsList;
     }
 
     public async Task<List<Contact>> FindContactsByContactNameAsync(string contactName)
     {
-      return null;
+      var sqlQuery = $"Select * from c where c.contactName='{contactName}'";
+      var contactsList = await GetContacts(sqlQuery);
+      return contactsList;
     }
 
     public async Task<List<Contact>> GetAllContactsAsync()
     {
-      return null;
+      var sqlQuery = $"Select * from c ";
+      var contactsList = await GetContacts(sqlQuery);
+      return contactsList;
     }
 
     public async Task<Contact> UpdateAsync(Contact contact)

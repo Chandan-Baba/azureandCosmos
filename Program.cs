@@ -30,7 +30,7 @@ namespace Contacts2TableCosmosMVC
     private static void SetupKeyVault(WebHostBuilderContext hostingContext, IConfigurationBuilder config)
     {
       var buildConfig = config.Build();
-      var keyVaultEndpoint = buildConfig["MNKeyVault"];
+      var keyVaultEndpoint = buildConfig["CBKeyVault"];
       if (!string.IsNullOrEmpty(keyVaultEndpoint))
       {
         var azureServiceTokenProvider = new AzureServiceTokenProvider();

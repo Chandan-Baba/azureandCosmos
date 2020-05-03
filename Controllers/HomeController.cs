@@ -26,7 +26,7 @@ namespace Contacts2TableCosmosMVC.Controllers
     {
       AzureServiceTokenProvider azureServiceTokenProvider = new AzureServiceTokenProvider();
       KeyVaultClient keyVaultClient = new KeyVaultClient(new KeyVaultClient.AuthenticationCallback(azureServiceTokenProvider.KeyVaultTokenCallback));
-      var secrets = await keyVaultClient.GetSecretsAsync($"{_configuration["MNKeyVault"]}");
+      var secrets = await keyVaultClient.GetSecretsAsync($"{_configuration["CBKeyVault"]}");
 
       Dictionary<string, string> secretValueList = new Dictionary<string, string>();
       foreach (var item in secrets)
